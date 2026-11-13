@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Accessibility & Contrast Styles */
+:root {
+  --color-primary: #142A43;
+  --color-bg: #F7F4EA;
+  --color-accent: #087E8B;
+  --color-highlight: #F2B84B;
+  --focus-ring: #F2B84B;
+  --font-scale: 1;
+}
+
+/* Font scale variables */
+html[data-font-size="normal"] {
+  font-size: 16px;
+}
+html[data-font-size="large"] {
+  font-size: 19px;
+}
+html[data-font-size="xlarge"] {
+  font-size: 22px;
+}
+html[data-font-size="xxlarge"] {
+  font-size: 25px;
+}
+
+/* Themes */
+/* Standard Sahpathi: Ivory + Deep Navy */
+html[data-theme="standard"] {
+  --color-primary: #142A43;
+  --color-bg: #F7F4EA;
+  --color-accent: #087E8B;
+  --color-highlight: #F2B84B;
+}
+
+/* High Contrast Yellow on Black (WCAG AAA) */
+html[data-theme="hc-yellow"] {
+  --color-primary: #000000;
+  --color-bg: #000000;
+  --color-accent: #FFFF00;
+  --color-highlight: #FFFF00;
+  --focus-ring: #FFFF00;
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+html[data-theme="hc-yellow"] body {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+
+html[data-theme="hc-yellow"] .bg-ivory,
+html[data-theme="hc-yellow"] .bg-white,
+html[data-theme="hc-yellow"] .bg-ivory-light,
+html[data-theme="hc-yellow"] .bg-ivory-muted,
+html[data-theme="hc-yellow"] .bg-gray-50,
+html[data-theme="hc-yellow"] .bg-gray-100 {
+  background-color: #0d0d0d !important;
+  color: #FFFFFF !important;
+  border-color: #FFFF00 !important;
+}
+
+html[data-theme="hc-yellow"] .text-navy,
+html[data-theme="hc-yellow"] .text-gray-900,
+html[data-theme="hc-yellow"] .text-gray-800,
+html[data-theme="hc-yellow"] .text-gray-700 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="hc-yellow"] .text-gray-600,
+html[data-theme="hc-yellow"] .text-gray-500 {
+  color: #FFFF99 !important;
+}
+
+html[data-theme="hc-yellow"] .bg-navy,
+html[data-theme="hc-yellow"] .bg-navy-dark,
+html[data-theme="hc-yellow"] .bg-navy-light {
+  background-color: #121212 !important;
+  color: #FFFF00 !important;
+  border-color: #FFFF00 !important;
+}
+
+html[data-theme="hc-yellow"] button,
+html[data-theme="hc-yellow"] input,
+html[data-theme="hc-yellow"] select,
+html[data-theme="hc-yellow"] textarea {
+  border: 2px solid #FFFF00 !important;
+}
+
+/* High Contrast Cyan on Black */
+html[data-theme="hc-cyan"] {
+  --color-primary: #000000;
+  --color-bg: #000000;
+  --color-accent: #00FFFF;
+  --color-highlight: #00FFFF;
+  --focus-ring: #00FFFF;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="hc-cyan"] body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="hc-cyan"] .bg-ivory,
+html[data-theme="hc-cyan"] .bg-white,
+html[data-theme="hc-cyan"] .bg-gray-50 {
+  background-color: #0a0a0a !important;
+  color: #FFFFFF !important;
+  border-color: #00FFFF !important;
+}
+
+html[data-theme="hc-cyan"] .text-navy,
+html[data-theme="hc-cyan"] .text-gray-900 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="hc-cyan"] .bg-navy {
+  background-color: #0f172a !important;
+  border-color: #00FFFF !important;
+}
+
+/* Dark Mode */
+html[data-theme="dark"] {
+  --color-primary: #0B1726;
+  --color-bg: #0B1726;
+  --color-accent: #0BA5B7;
+  --color-highlight: #F2B84B;
+  background-color: #0B1726 !important;
+  color: #F7F4EA !important;
+}
+
+html[data-theme="dark"] body {
+  background-color: #0B1726 !important;
+  color: #F7F4EA !important;
+}
+
+html[data-theme="dark"] .bg-ivory,
+html[data-theme="dark"] .bg-white {
+  background-color: #142A43 !important;
+  color: #F7F4EA !important;
+  border-color: #1E3E61 !important;
+}
+
+html[data-theme="dark"] .text-navy {
+  color: #F7F4EA !important;
+}
+
+html[data-theme="dark"] .text-gray-600 {
+  color: #CBD5E1 !important;
+}
+
+/* Soft Sepia Low Vision Mode */
+html[data-theme="sepia"] {
+  background-color: #F4ECD8 !important;
+  color: #2D2319 !important;
+}
+
+html[data-theme="sepia"] body {
+  background-color: #F4ECD8 !important;
+  color: #2D2319 !important;
+}
+
+html[data-theme="sepia"] .bg-ivory {
+  background-color: #FAF4E5 !important;
+}
+
+/* Wireframe Blueprint Mode (Section 10 of specification) */
+html[data-wireframe="true"] {
+  filter: grayscale(100%);
+}
+
+html[data-wireframe="true"] * {
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+html[data-wireframe="true"] .wireframe-badge {
+  display: inline-block !important;
+}
+
+.wireframe-badge {
+  display: none;
+}
+
+/* Focus styles for keyboard accessibility */
+:focus-visible {
+  outline: 3px solid #F2B84B !important;
+  outline-offset: 3px !important;
+}
+
+html[data-theme="hc-yellow"] :focus-visible {
+  outline: 4px solid #FFFF00 !important;
+  outline-offset: 3px !important;
+}
+
+html[data-theme="hc-cyan"] :focus-visible {
+  outline: 4px solid #00FFFF !important;
+  outline-offset: 3px !important;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ECE6D5;
+}
+::-webkit-scrollbar-thumb {
+  background: #142A43;
+  border-radius: 5px;
+}
+
+/* Reduce motion when user specifies */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-reduce-motion="true"] *,
+html[data-reduce-motion="true"] *::before,
+html[data-reduce-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
