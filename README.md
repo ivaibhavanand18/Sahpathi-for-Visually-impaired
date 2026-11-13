@@ -86,3 +86,4 @@ npm run build
 
 ## 📄 License
 This project is open-source and dedicated to social impact and equal educational opportunities for students with disabilities.
+
